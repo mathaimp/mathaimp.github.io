@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mathai Mathew Pulicken</title>
+  <meta name="description" content="Mathai Mathew Pulicken, Research Associate at the Robotics Research Center, IIIT Hyderabad.">
+  <meta name="theme-color" content="#fdfcf9">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    /* set the theme before first paint to avoid a flash */
+    try {
+      var t = localStorage.getItem("theme");
+      if (!t && window.matchMedia("(prefers-color-scheme: dark)").matches) t = "dark";
+      if (t) document.documentElement.dataset.theme = t;
+    } catch (e) {}
+  </script>
+</head>
+<body>
+<button class="theme-toggle" type="button" aria-label="Toggle dark mode">◐</button>
+
+<main class="container">
+
+  <header class="profile">
+    <img class="photo" src="assets/prof_pic.png" alt="Photo of Mathai Mathew Pulicken" width="240" height="240">
+    <div class="about">
+      <h1>Mathai Mathew Pulicken</h1>
+      <p class="role">Research Associate, <a href="https://robotics.iiit.ac.in/">Robotics Research Center</a>, IIIT Hyderabad</p>
+      <p>
+        I'm Mathai, a Research Associate at the
+        <a href="https://robotics.iiit.ac.in/">Robotics Research Center</a> at IIIT Hyderabad.
+        I work on <strong>robotics</strong>. <!-- TODO: one-line research focus -->
+      </p>
+      <p>I graduated from BITS Pilani in 2025.</p>
+      <!-- TODO: second paragraph on longer-term interests and things outside research -->
+      <p class="links">
+        <a href="mailto:mathewp8616@gmail.com">Email</a>
+        <a href="https://scholar.google.com/citations?user=HgS-NVwAAAAJ">Scholar</a>
+        <a href="https://github.com/mathaimp">GitHub</a>
+        <a href="https://www.linkedin.com/in/mathai-mathew-pulicken/">LinkedIn</a>
+      </p>
+    </div>
+  </header>
+
+  <section id="publications">
+    <h2>Publications</h2>
+    <ol class="entries">
+
+      <li class="entry">
+        <div class="title"><a href="https://arxiv.org/abs/2610.40050">Don't Risk It!: Trajectory-Conditioned Distributional Risk for LiDAR-Only Crowd Navigation</a></div>
+        <div class="authors"><strong>Mathai Mathew Pulicken</strong>, Laksh Nanwani, Basant Sharma, Phani Teja Singamaneni, Arun Kumar Singh, K. Madhava Krishna</div>
+        <div class="venue"><em>arXiv preprint</em>, 2026</div>
+        <div class="pills"><a href="https://arxiv.org/abs/2610.40050">arXiv</a></div>
+        <details>
+          <summary>Abstract</summary>
+          <p>Efficient crowd navigation requires anticipating dynamic collision-free space without relying on fragile object tracking. We propose the Don't Risk It Planner (DRIP), an end-to-end LiDAR-only planning framework that couples occupancy forecasting with trajectory-conditioned clearance and uncertainty estimation. Operating directly on LiDAR-derived occupancy grid histories, DRIP predicts a distribution over minimum robot-obstacle clearance for candidate control sequences to evaluate collision risk. The model is trained using a risk cost that grounds predictive uncertainty directly in empirical collision outcomes rather than geometric regression alone. In closed-loop experiments with up to 45 pedestrians, DRIP achieves higher success rates with fewer collisions and reduced freezing behavior compared to state-of-the-art baselines.</p>
+        </details>
+      </li>
+
+      <li class="entry">
+        <div class="title"><a href="https://arxiv.org/abs/2602.06698">Crowd-FM: Learned Optimal Selection of Conditional Flow Matching-generated Trajectories for Crowd Navigation</a></div>
+        <div class="authors">Antareep Singha, Laksh Nanwani, <strong>Mathai Mathew Pulicken</strong>, Samkit Jain, Phani Teja Singamaneni, Arun Kumar Singh, K. Madhava Krishna</div>
+        <div class="venue"><em>arXiv preprint</em>, 2026</div>
+        <div class="pills"><a href="https://arxiv.org/abs/2602.06698">arXiv</a></div>
+        <details>
+          <summary>Abstract</summary>
+          <p>Safe and computationally efficient local planning for mobile robots in dense, unstructured human crowds remains a fundamental challenge. Moreover, ensuring that robot trajectories are similar to how a human moves will increase the acceptance of the robot in human environments. In this paper, we present Crowd-FM, a learning-based approach to address both safety and human-likeness challenges. Our approach has two novel components. First, we train a Conditional Flow-Matching (CFM) policy over a dataset of optimally controlled trajectories to learn a set of collision-free primitives that a robot can choose at any given scenario. The chosen optimal control solver can generate multi-modal collision-free trajectories, allowing the CFM policy to learn a diverse set of maneuvers. Secondly, we learn a score function over a dataset of human demonstration trajectories that provides a human-likeness score for the flow primitives. At inference time, computing the optimal trajectory requires selecting the one with the highest score.</p>
+        </details>
+      </li>
+
+      <li class="entry">
+        <div class="title">Decoupling Safety and Social Compliance in Generative Crowd Navigation</div>
+        <!-- TODO: confirm full author list (Scholar truncates it) -->
+        <div class="authors">Antareep Singha, Laksh Nanwani, <strong>Mathai Mathew Pulicken</strong>, Samkit Jain, Phani Teja Singamaneni, Arun Kumar Singh, K. Madhava Krishna</div>
+        <div class="venue"><em>ICRA 2026 Workshop on Bridging the Gap between Robot Learning and Human-Centered Robotics</em>, 2026</div>
+      </li>
+
+    </ol>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <ol class="entries">
+
+      <li class="entry">
+        <div class="title"><a href="https://github.com/mathaimp/livox_gz_sim">livox_gz_sim</a></div>
+        <div class="pills"><a href="https://github.com/mathaimp/livox_gz_sim">code</a></div>
+        <p class="summary">Livox Mid-360 and HAP lidar simulation for Gazebo Harmonic and ROS 2 Jazzy, with the real non-repetitive scan pattern, per-point timing and datasheet noise.</p>
+      </li>
+
+      <li class="entry">
+        <div class="title"><a href="https://github.com/mathaimp/.dotfiles">.dotfiles</a></div>
+        <div class="pills"><a href="https://github.com/mathaimp/.dotfiles">code</a></div>
+        <p class="summary">My personal NixOS configuration, a declarative flake-based setup for my laptop, home server and dev environment.</p>
+      </li>
+
+    </ol>
+  </section>
+
+  <footer>© 2026 Mathai Mathew Pulicken</footer>
+</main>
+
+<script>
+  (function () {
+    var root = document.documentElement;
+    document.querySelector(".theme-toggle").addEventListener("click", function () {
+      var next = root.dataset.theme === "dark" ? "light" : "dark";
+      root.dataset.theme = next;
+      try { localStorage.setItem("theme", next); } catch (e) {}
+    });
+  })();
+</script>
+</body>
+</html>
