@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>All Projects · Mathai Mathew Pulicken</title>
+  <meta name="theme-color" content="#fdfcf9">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" href="favicon.ico" sizes="48x48 32x32 16x16">
+  <link rel="stylesheet" href="style.css?v=18">
+</head>
+<body>
+
+<nav class="topbar"><div class="topbar-inner"><a href="./">Mathai Mathew Pulicken</a></div></nav>
+
+<main class="container subpage">
+
+  <p class="back"><a href="./">← Back</a></p>
+
+  <section id="projects">
+    <h2>All Projects</h2>
+    <p class="lede">Things I have built and worked on.</p>
+    <ol class="entries">
+
+      <li class="entry has-thumb">
+        <a class="thumb" href="https://github.com/mathaimp/livox_gz_sim"><img src="assets/img/livox.webp" alt="FAST-LIO point-cloud map built from a simulated Livox HAP" loading="lazy"></a>
+        <div class="body">
+        <div class="title">Livox Lidar Gazebo Simulation for ROS 2</div>
+        <div class="pills"><a href="https://github.com/mathaimp/livox_gz_sim">code</a></div>
+        <p class="summary">Livox Mid-360 and HAP lidar simulation for Gazebo Harmonic and ROS 2 Jazzy, with the real non-repetitive scan pattern, per-point timing and datasheet noise.</p>
+      </div>
+      </li>
+
+      <li class="entry has-thumb">
+        <div class="thumb"><img src="assets/img/scout.webp" alt="Scout, a 3D-printed quadruped robot with exposed wiring on a lab bench" loading="lazy"></div>
+        <div class="body">
+        <div class="title">Scout: A Custom Low-cost Quadruped Platform</div>
+        <p class="summary">A low-cost ROS 2 quadruped built on OpenQuadruped, with custom electronics and a custom RL-trained gait. Built from cheap parts, in the same price range as OpenQuadruped, and tested in Gazebo and on the real robot.</p>
+      </div>
+      </li>
+
+      <li class="entry has-thumb">
+        <a class="thumb" href="https://github.com/mathaimp/rrt_explorer"><img src="assets/img/rrt.webp" alt="TurtleBot3 exploring turtlebot3_world in Gazebo, with the RRT tree, frontier clusters and planned path overlaid" loading="lazy"></a>
+        <div class="body">
+        <div class="title">RRT-based Exploration of Unknown Environments</div>
+        <div class="pills"><a href="https://github.com/mathaimp/rrt_explorer">code</a></div>
+        <p class="summary">A ROS Noetic package that grows RRTs on the SLAM occupancy grid to find frontiers, clusters and filters them, and sends the best one to move_base. Runs on a TurtleBot3 with gmapping.</p>
+      </div>
+      </li>
+
+      <li class="entry has-thumb">
+        <div class="thumb"><img src="assets/img/rl_drone.webp" alt="Simulated multicopter in AirSim with depth, segmentation and camera views" loading="lazy"></div>
+        <div class="body">
+        <div class="title">Reinforcement Learning for Agile Path Planning of Multicopters</div>
+        <p class="summary">A multicopter simulation in Unreal Engine, AirSim and OpenAI Gym, with PPO-trained recovery that regains control and hovers after signal loss or motor failure, and semantic segmentation for obstacle perception. Also built a physical quadcopter with a Jetson, ZED stereo camera and Pixhawk running PX4 for sim-to-real testing.</p>
+      </div>
+      </li>
+
+      <li class="entry has-thumb">
+        <a class="thumb" href="https://github.com/mathaimp/civilbot"><img src="assets/img/civilbot.webp" alt="Top-down view of the Civilbot four-wheeled rover and its onboard electronics" loading="lazy"></a>
+        <div class="body">
+        <div class="title">Civilbot</div>
+        <div class="pills"><a href="https://github.com/mathaimp/civilbot">code</a></div>
+        <p class="summary">A low-cost four-wheeled ROS rover for testing lidar mapping and navigation, using the ROS Navstack and Hector mapping with a differential drive. Also tested a ZED stereo camera through the ZED Open Capture library.</p>
+      </div>
+      </li>
+
+      <li class="entry has-thumb">
+        <a class="thumb" href="https://github.com/mathaimp/.dotfiles"><img src="assets/img/dotfiles.webp" alt="Directory tree of the .dotfiles NixOS flake" loading="lazy"></a>
+        <div class="body">
+        <div class="title">Declarative NixOS System Configuration</div>
+        <div class="pills"><a href="https://github.com/mathaimp/.dotfiles">code</a></div>
+        <p class="summary">My personal NixOS configuration, a declarative flake-based setup for my laptop, home server and dev environment.</p>
+      </div>
+      </li>
+
+      <li class="entry has-thumb">
+        <div class="thumb"><img src="assets/img/advd.webp" alt="Transistor-level VLSI layout of the parity checker, with PMOS and NMOS devices between the VDD and VSS rails" loading="lazy"></div>
+        <div class="body">
+        <div class="title">Low-Area 4-bit Parity Checker and Sequence Comparator in VLSI</div>
+        <p class="summary">A 4-bit even parity checker at 180 nm, with its XOR gates cut down from the standard 8-transistor form to a transmission-gate version and then a three-transistor design (5.947 µW), with the output transistor's W/L ratio tuned to limit threshold-drop degradation. Also a D flip-flop sequence comparator, written in gate-level Verilog, that flags inputs that differ over four consecutive clock cycles.</p>
+      </div>
+      </li>
+
+      <li class="entry has-thumb">
+        <div class="thumb"><img src="assets/img/qarch.webp" alt="Measurement histogram where the state 101 appears about 953 times out of 1000" loading="lazy"></div>
+        <div class="body">
+        <div class="title">Amplitude Amplification for Boolean Expression Evaluation</div>
+        <p class="summary">A Qiskit implementation of Grover-style amplitude amplification that finds the unique solution of a three-variable Boolean satisfiability problem in two iterations, with a measured probability of 0.953 in simulation. Uses O(√N) oracle calls against O(N) classically, and outlines how to adapt the oracle and the iteration count to other problems.</p>
+      </div>
+      </li>
+
+    </ol>
+  </section>
+
+  <footer>© 2026 Mathai Mathew Pulicken</footer>
+</main>
+
+<script>
+  document.querySelectorAll(".abs-toggle").forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      e.preventDefault();
+      var box = a.closest(".body").querySelector(".abstract");
+      var open = box.hidden;
+      box.hidden = !open;
+      a.setAttribute("aria-expanded", String(open));
+    });
+  });
+</script>
+</body>
+</html>

@@ -4,97 +4,178 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mathai Mathew Pulicken</title>
-  <meta name="description" content="Mathai Mathew Pulicken, Research Associate at the Robotics Research Center, IIIT Hyderabad.">
+  <meta name="description" content="Mathai Mathew Pulicken, Research Assistant at the Robotics Research Center, IIIT Hyderabad.">
   <meta name="theme-color" content="#fdfcf9">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap">
-  <link rel="stylesheet" href="style.css">
-  <script>
-    /* set the theme before first paint to avoid a flash */
-    try {
-      var t = localStorage.getItem("theme");
-      if (!t && window.matchMedia("(prefers-color-scheme: dark)").matches) t = "dark";
-      if (t) document.documentElement.dataset.theme = t;
-    } catch (e) {}
-  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" href="favicon.ico" sizes="48x48 32x32 16x16">
+  <link rel="stylesheet" href="style.css?v=18">
 </head>
 <body>
-<button class="theme-toggle" type="button" aria-label="Toggle dark mode">◐</button>
 
 <main class="container">
 
   <header class="profile">
-    <img class="photo" src="assets/prof_pic.png" alt="Photo of Mathai Mathew Pulicken" width="240" height="240">
+    <img class="photo" src="assets/prof_pic.webp" alt="Photo of Mathai Mathew Pulicken" width="240" height="240">
     <div class="about">
       <h1>Mathai Mathew Pulicken</h1>
-      <p class="role">Research Associate, <a href="https://robotics.iiit.ac.in/">Robotics Research Center</a>, IIIT Hyderabad</p>
       <p>
-        I'm Mathai, a Research Associate at the
-        <a href="https://robotics.iiit.ac.in/">Robotics Research Center</a> at IIIT Hyderabad.
-        I work on <strong>robotics</strong>. <!-- TODO: one-line research focus -->
+        I'm Mathai, a Research Assistant at the
+        <a href="https://robotics.iiit.ac.in/">Robotics Research Center</a> at IIIT Hyderabad, advised by <a href="https://scholar.google.com/citations?user=QDuPGHwAAAAJ">Prof. K. Madhava Krishna</a> and, for my work on robotic manipulation, <a href="https://scholar.google.com/citations?user=oVS3HHIAAAAJ&amp;hl=en">Prof. Sourav Garg</a>.
       </p>
-      <p>I graduated from BITS Pilani in 2025.</p>
-      <!-- TODO: second paragraph on longer-term interests and things outside research -->
+      <p>
+        I'm interested in how robots can make reliable decisions in unstructured, uncertain environments.
+        My research currently centers on <strong>robotic manipulation</strong>, in particular <strong>vision-language-action models</strong>.
+        <!-- TODO: add etv to the line above once expanded -->
+        Before this, I worked on <strong>crowd navigation</strong>, building learned planners that reason about risk and human behavior to stay safe and socially compliant around pedestrians.
+        <!-- TODO: optional sentence on longer-term interests -->
+      </p>
       <p class="links">
-        <a href="mailto:mathewp8616@gmail.com">Email</a>
-        <a href="https://scholar.google.com/citations?user=HgS-NVwAAAAJ">Scholar</a>
-        <a href="https://github.com/mathaimp">GitHub</a>
-        <a href="https://www.linkedin.com/in/mathai-mathew-pulicken/">LinkedIn</a>
+        <a href="mailto:mathewp8616@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+        <span class="sep">|</span>
+        <a href="https://www.linkedin.com/in/mathai-mathew-pulicken/"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <span class="sep">|</span>
+        <a href="https://github.com/mathaimp"><i class="fab fa-github"></i> GitHub</a>
+        <span class="sep">|</span>
+        <a href="https://scholar.google.com/citations?user=HgS-NVwAAAAJ"><i class="fas fa-graduation-cap"></i> Scholar</a>
       </p>
     </div>
   </header>
 
   <section id="publications">
-    <h2>Publications</h2>
+    <div class="section-head"><h2>Selected Publications</h2><a class="all" href="publications.html">all publications →</a></div>
     <ol class="entries">
 
-      <li class="entry">
+      <li class="entry has-thumb">
+        <a class="thumb" href="https://arxiv.org/abs/2610.40050"><img src="assets/img/drip.webp" alt="DRIP planning among pedestrians in simulation" loading="lazy"></a>
+        <div class="body">
         <div class="title"><a href="https://arxiv.org/abs/2610.40050">Don't Risk It!: Trajectory-Conditioned Distributional Risk for LiDAR-Only Crowd Navigation</a></div>
         <div class="authors"><strong>Mathai Mathew Pulicken</strong>, Laksh Nanwani, Basant Sharma, Phani Teja Singamaneni, Arun Kumar Singh, K. Madhava Krishna</div>
         <div class="venue"><em>arXiv preprint</em>, 2026</div>
-        <div class="pills"><a href="https://arxiv.org/abs/2610.40050">arXiv</a></div>
-        <details>
-          <summary>Abstract</summary>
-          <p>Efficient crowd navigation requires anticipating dynamic collision-free space without relying on fragile object tracking. We propose the Don't Risk It Planner (DRIP), an end-to-end LiDAR-only planning framework that couples occupancy forecasting with trajectory-conditioned clearance and uncertainty estimation. Operating directly on LiDAR-derived occupancy grid histories, DRIP predicts a distribution over minimum robot-obstacle clearance for candidate control sequences to evaluate collision risk. The model is trained using a risk cost that grounds predictive uncertainty directly in empirical collision outcomes rather than geometric regression alone. In closed-loop experiments with up to 45 pedestrians, DRIP achieves higher success rates with fewer collisions and reduced freezing behavior compared to state-of-the-art baselines.</p>
-        </details>
+        <div class="pills"><a href="https://dont-risk-it-planner.github.io">project page</a><a href="https://arxiv.org/abs/2610.40050">arXiv</a><a href="https://github.com/dont-risk-it-planner/drip">code</a><a href="#" class="abs-toggle" aria-expanded="false">abstract</a></div>
+        <p class="summary">LiDAR-only crowd navigation that scores candidate trajectories by their predicted collision risk.</p>
+        <div class="abstract" hidden><p>Efficient crowd navigation requires anticipating dynamic collision-free space without relying on fragile object tracking. We propose the Don't Risk It Planner (DRIP), an end-to-end LiDAR-only planning framework that couples occupancy forecasting with trajectory-conditioned clearance and uncertainty estimation. Operating directly on LiDAR-derived occupancy grid histories, DRIP predicts a distribution over minimum robot-obstacle clearance for candidate control sequences to evaluate collision risk. The model is trained using a risk cost that grounds predictive uncertainty directly in empirical collision outcomes rather than geometric regression alone. In closed-loop experiments with up to 45 pedestrians, DRIP achieves higher success rates with fewer collisions and reduced freezing behavior compared to state-of-the-art baselines.</p></div>
+      </div>
       </li>
 
-      <li class="entry">
-        <div class="title"><a href="https://arxiv.org/abs/2602.06698">Crowd-FM: Learned Optimal Selection of Conditional Flow Matching-generated Trajectories for Crowd Navigation</a></div>
-        <div class="authors">Antareep Singha, Laksh Nanwani, <strong>Mathai Mathew Pulicken</strong>, Samkit Jain, Phani Teja Singamaneni, Arun Kumar Singh, K. Madhava Krishna</div>
-        <div class="venue"><em>arXiv preprint</em>, 2026</div>
-        <div class="pills"><a href="https://arxiv.org/abs/2602.06698">arXiv</a></div>
-        <details>
-          <summary>Abstract</summary>
-          <p>Safe and computationally efficient local planning for mobile robots in dense, unstructured human crowds remains a fundamental challenge. Moreover, ensuring that robot trajectories are similar to how a human moves will increase the acceptance of the robot in human environments. In this paper, we present Crowd-FM, a learning-based approach to address both safety and human-likeness challenges. Our approach has two novel components. First, we train a Conditional Flow-Matching (CFM) policy over a dataset of optimally controlled trajectories to learn a set of collision-free primitives that a robot can choose at any given scenario. The chosen optimal control solver can generate multi-modal collision-free trajectories, allowing the CFM policy to learn a diverse set of maneuvers. Secondly, we learn a score function over a dataset of human demonstration trajectories that provides a human-likeness score for the flow primitives. At inference time, computing the optimal trajectory requires selecting the one with the highest score.</p>
-        </details>
+      <li class="entry has-thumb">
+        <a class="thumb" href="https://doi.org/10.1109/ICRA57385.2026.11696381"><img src="assets/img/crowdfm.webp" alt="Crowd-FM trajectories on a real robot in a cluttered and a crowded scene" loading="lazy"></a>
+        <div class="body">
+        <div class="title"><a href="https://doi.org/10.1109/ICRA57385.2026.11696381">Crowd-FM: Learned Optimal Selection of Conditional Flow Matching-generated Trajectories for Crowd Navigation</a></div>
+        <div class="authors">Antareep Singha*, Laksh Nanwani*, <strong>Mathai Mathew Pulicken</strong>, Samkit Jain, Phani Teja Singamaneni, Arun Kumar Singh, K. Madhava Krishna</div>
+        <div class="venue"><em>IEEE International Conference on Robotics and Automation (ICRA)</em>, 2026</div>
+        <div class="pills"><a href="https://smart-wheelchair-rrc.github.io/crowdfm-webpage/">project page</a><a href="https://doi.org/10.1109/ICRA57385.2026.11696381">paper</a><a href="https://github.com/Smart-Wheelchair-RRC/crowd-fm">code</a><a href="#" class="abs-toggle" aria-expanded="false">abstract</a></div>
+        <p class="summary">Flow-matching trajectory generation with a learned human-likeness score for selecting among trajectories.</p>
+        <div class="abstract" hidden><p>Safe and computationally efficient local planning for mobile robots in dense, unstructured human crowds remains a fundamental challenge. Moreover, ensuring that robot trajectories are similar to how a human moves will increase the acceptance of the robot in human environments. In this paper, we present Crowd-FM, a learning-based approach to address both safety and human-likeness challenges. Our approach has two novel components. First, we train a Conditional Flow-Matching (CFM) policy over a dataset of optimally controlled trajectories to learn a set of collision-free primitives that a robot can choose at any given scenario. The chosen optimal control solver can generate multi-modal collision-free trajectories, allowing the CFM policy to learn a diverse set of maneuvers. Secondly, we learn a score function over a dataset of human demonstration trajectories that provides a human-likeness score for the flow primitives. At inference time, computing the optimal trajectory requires selecting the one with the highest score.</p></div>
+      </div>
       </li>
 
-      <li class="entry">
-        <div class="title">Decoupling Safety and Social Compliance in Generative Crowd Navigation</div>
-        <!-- TODO: confirm full author list (Scholar truncates it) -->
-        <div class="authors">Antareep Singha, Laksh Nanwani, <strong>Mathai Mathew Pulicken</strong>, Samkit Jain, Phani Teja Singamaneni, Arun Kumar Singh, K. Madhava Krishna</div>
+      <li class="entry has-thumb">
+        <a class="thumb" href="https://openreview.net/forum?id=SydJVHa2wr"><img src="assets/img/decoupling.webp" alt="Candidate trajectories in a simulated crowd with tracked pedestrians" loading="lazy"></a>
+        <div class="body">
+        <div class="title"><a href="https://openreview.net/forum?id=SydJVHa2wr">Decoupling Safety and Social Compliance in Generative Crowd Navigation</a></div>
+        <div class="authors">Antareep Singha*, Laksh Nanwani*, <strong>Mathai Mathew Pulicken</strong>, Samkit Jain, Phani Teja Singamaneni, Arun Kumar Singh, K. Madhava Krishna</div>
         <div class="venue"><em>ICRA 2026 Workshop on Bridging the Gap between Robot Learning and Human-Centered Robotics</em>, 2026</div>
+        <div class="pills"><a href="https://openreview.net/forum?id=SydJVHa2wr">OpenReview</a></div>
+        </div>
       </li>
 
     </ol>
   </section>
 
   <section id="projects">
-    <h2>Projects</h2>
+    <div class="section-head"><h2>Selected Projects</h2><a class="all" href="projects.html">all projects →</a></div>
+    <ol class="entries">
+
+      <li class="entry has-thumb">
+        <a class="thumb" href="https://github.com/mathaimp/livox_gz_sim"><img src="assets/img/livox.webp" alt="FAST-LIO point-cloud map built from a simulated Livox HAP" loading="lazy"></a>
+        <div class="body">
+        <div class="title">Livox Lidar Gazebo Simulation for ROS 2</div>
+        <div class="pills"><a href="https://github.com/mathaimp/livox_gz_sim">code</a></div>
+        <p class="summary">Livox Mid-360 and HAP lidar simulation for Gazebo Harmonic and ROS 2 Jazzy, with the real non-repetitive scan pattern, per-point timing and datasheet noise.</p>
+      </div>
+      </li>
+
+      <li class="entry has-thumb">
+        <div class="thumb"><img src="assets/img/scout.webp" alt="Scout, a 3D-printed quadruped robot with exposed wiring on a lab bench" loading="lazy"></div>
+        <div class="body">
+        <div class="title">Scout: A Custom Low-cost Quadruped Platform</div>
+        <p class="summary">A low-cost ROS 2 quadruped built on OpenQuadruped, with custom electronics and a custom RL-trained gait. Built from cheap parts, in the same price range as OpenQuadruped, and tested in Gazebo and on the real robot.</p>
+      </div>
+      </li>
+
+      <li class="entry has-thumb">
+        <a class="thumb" href="https://github.com/mathaimp/rrt_explorer"><img src="assets/img/rrt.webp" alt="TurtleBot3 exploring turtlebot3_world in Gazebo, with the RRT tree, frontier clusters and planned path overlaid" loading="lazy"></a>
+        <div class="body">
+        <div class="title">RRT-based Exploration of Unknown Environments</div>
+        <div class="pills"><a href="https://github.com/mathaimp/rrt_explorer">code</a></div>
+        <p class="summary">A ROS Noetic package that grows RRTs on the SLAM occupancy grid to find frontiers, clusters and filters them, and sends the best one to move_base. Runs on a TurtleBot3 with gmapping.</p>
+      </div>
+      </li>
+
+    </ol>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <ol class="entries">
+
+      <li class="entry has-logo">
+        <img class="logo" src="assets/logos/rrc.webp" alt="Robotics Research Center logo" loading="lazy">
+        <div class="body">
+          <div class="exp-head"><div class="title">Research Assistant, <a href="https://robotics.iiit.ac.in/">Robotics Research Center, IIIT Hyderabad</a></div><span class="date">May 2025 – Present</span></div>
+        </div>
+      </li>
+
+      <li class="entry has-logo">
+        <img class="logo" src="assets/logos/stoch.webp" alt="Stochastic Robotics Lab logo" loading="lazy">
+        <div class="body">
+          <div class="exp-head"><div class="title">Research Intern, <a href="https://www.stochlab.com/">Stochastic Robotics Lab, IISc</a></div><span class="date">Dec 2024 – May 2025</span></div>
+          <p class="summary">Worked on a model predictive controller (MPC) for walking control of a custom-built biped robot.</p>
+        </div>
+      </li>
+
+      <li class="entry has-logo">
+        <img class="logo" src="assets/logos/nal.webp" alt="CSIR-NAL logo" loading="lazy">
+        <div class="body">
+          <div class="exp-head"><div class="title">Research and Development Intern, <a href="https://www.nal.res.in/">CSIR-National Aerospace Laboratories</a></div><span class="date">Jul 2024 – Dec 2024</span></div>
+          <p class="summary">Design and development of a custom sensor suite for meteorological drones for weather sensing in remote areas.</p>
+        </div>
+      </li>
+
+      <li class="entry has-logo">
+        <img class="logo" src="assets/logos/ust.webp" alt="UST logo" loading="lazy">
+        <div class="body">
+          <div class="exp-head"><div class="title">Research Intern, <a href="https://www.ust.com/">UST Global Innovation Labs</a></div><span class="date">Jun 2023 – Jul 2023</span></div>
+          <p class="summary">Worked on localization and mapping using drones and AMR.</p>
+        </div>
+      </li>
+
+      <li class="entry has-logo">
+        <img class="logo" src="assets/logos/criss.webp" alt="CRISS Robotics logo" loading="lazy">
+        <div class="body">
+          <div class="exp-head"><div class="title">Head of Software Engineering, <a href="https://criss-robotics.in/">CRISS Robotics</a></div><span class="date">Feb 2023 – Mar 2024</span></div>
+          <p class="summary">Previously Software Engineer (May 2022 – Feb 2023). Development and testing of the software stack on a model Mars rover and UAVs.</p>
+        </div>
+      </li>
+
+    </ol>
+  </section>
+
+  <section id="teaching">
+    <h2>Teaching</h2>
     <ol class="entries">
 
       <li class="entry">
-        <div class="title"><a href="https://github.com/mathaimp/livox_gz_sim">livox_gz_sim</a></div>
-        <div class="pills"><a href="https://github.com/mathaimp/livox_gz_sim">code</a></div>
-        <p class="summary">Livox Mid-360 and HAP lidar simulation for Gazebo Harmonic and ROS 2 Jazzy, with the real non-repetitive scan pattern, per-point timing and datasheet noise.</p>
+        <div class="title">Instructor and Organizer, IIITH Robotics Summer School</div>
+        <div class="pills"><a href="https://github.com/RoboticsIIITH/summer-school-2026">course material</a></div>
+        <p class="summary">Taught and mentored 40+ students during a 4-week intensive robotics onboarding program. Developed lectures, assignments and hands-on labs covering robotics fundamentals, and guided student projects involving ROS 2, motion planning, perception and manipulation.</p>
       </li>
 
       <li class="entry">
-        <div class="title"><a href="https://github.com/mathaimp/.dotfiles">.dotfiles</a></div>
-        <div class="pills"><a href="https://github.com/mathaimp/.dotfiles">code</a></div>
-        <p class="summary">My personal NixOS configuration, a declarative flake-based setup for my laptop, home server and dev environment.</p>
+        <div class="title">Instructor, ROS 2 Introductory Class, BITS Pilani</div>
+        <div class="pills"><a href="https://github.com/CRISS-Robotics/learn-ros">course material</a></div>
+        <p class="summary">Introduced 50+ first- and second-year students to ROS 2, covering the Robot Operating System, its middleware, simulation in Gazebo, and navigation with Nav2.</p>
       </li>
 
     </ol>
@@ -104,14 +185,15 @@
 </main>
 
 <script>
-  (function () {
-    var root = document.documentElement;
-    document.querySelector(".theme-toggle").addEventListener("click", function () {
-      var next = root.dataset.theme === "dark" ? "light" : "dark";
-      root.dataset.theme = next;
-      try { localStorage.setItem("theme", next); } catch (e) {}
+  document.querySelectorAll(".abs-toggle").forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      e.preventDefault();
+      var box = a.closest(".body").querySelector(".abstract");
+      var open = box.hidden;
+      box.hidden = !open;
+      a.setAttribute("aria-expanded", String(open));
     });
-  })();
+  });
 </script>
 </body>
 </html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>All Publications · Mathai Mathew Pulicken</title>
+  <meta name="theme-color" content="#fdfcf9">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" href="favicon.ico" sizes="48x48 32x32 16x16">
+  <link rel="stylesheet" href="style.css?v=18">
+</head>
+<body>
+
+<nav class="topbar"><div class="topbar-inner"><a href="./">Mathai Mathew Pulicken</a></div></nav>
+
+<main class="container subpage">
+
+  <p class="back"><a href="./">← Back</a></p>
+
+  <section id="publications">
+    <h2>All Publications</h2>
+    <p class="lede">Papers and preprints.</p>
+    <ol class="entries">
+
+      <li class="entry has-thumb">
+        <a class="thumb" href="https://arxiv.org/abs/2610.40050"><img src="assets/img/drip.webp" alt="DRIP planning among pedestrians in simulation" loading="lazy"></a>
+        <div class="body">
+        <div class="title"><a href="https://arxiv.org/abs/2610.40050">Don't Risk It!: Trajectory-Conditioned Distributional Risk for LiDAR-Only Crowd Navigation</a></div>
+        <div class="authors"><strong>Mathai Mathew Pulicken</strong>, Laksh Nanwani, Basant Sharma, Phani Teja Singamaneni, Arun Kumar Singh, K. Madhava Krishna</div>
+        <div class="venue"><em>arXiv preprint</em>, 2026</div>
+        <div class="pills"><a href="https://dont-risk-it-planner.github.io">project page</a><a href="https://arxiv.org/abs/2610.40050">arXiv</a><a href="https://github.com/dont-risk-it-planner/drip">code</a><a href="#" class="abs-toggle" aria-expanded="false">abstract</a></div>
+        <p class="summary">LiDAR-only crowd navigation that scores candidate trajectories by their predicted collision risk.</p>
+        <div class="abstract" hidden><p>Efficient crowd navigation requires anticipating dynamic collision-free space without relying on fragile object tracking. We propose the Don't Risk It Planner (DRIP), an end-to-end LiDAR-only planning framework that couples occupancy forecasting with trajectory-conditioned clearance and uncertainty estimation. Operating directly on LiDAR-derived occupancy grid histories, DRIP predicts a distribution over minimum robot-obstacle clearance for candidate control sequences to evaluate collision risk. The model is trained using a risk cost that grounds predictive uncertainty directly in empirical collision outcomes rather than geometric regression alone. In closed-loop experiments with up to 45 pedestrians, DRIP achieves higher success rates with fewer collisions and reduced freezing behavior compared to state-of-the-art baselines.</p></div>
+      </div>
+      </li>
+
+      <li class="entry has-thumb">
+        <a class="thumb" href="https://doi.org/10.1109/ICRA57385.2026.11696381"><img src="assets/img/crowdfm.webp" alt="Crowd-FM trajectories on a real robot in a cluttered and a crowded scene" loading="lazy"></a>
+        <div class="body">
+        <div class="title"><a href="https://doi.org/10.1109/ICRA57385.2026.11696381">Crowd-FM: Learned Optimal Selection of Conditional Flow Matching-generated Trajectories for Crowd Navigation</a></div>
+        <div class="authors">Antareep Singha*, Laksh Nanwani*, <strong>Mathai Mathew Pulicken</strong>, Samkit Jain, Phani Teja Singamaneni, Arun Kumar Singh, K. Madhava Krishna</div>
+        <div class="venue"><em>IEEE International Conference on Robotics and Automation (ICRA)</em>, 2026</div>
+        <div class="pills"><a href="https://smart-wheelchair-rrc.github.io/crowdfm-webpage/">project page</a><a href="https://doi.org/10.1109/ICRA57385.2026.11696381">paper</a><a href="https://github.com/Smart-Wheelchair-RRC/crowd-fm">code</a><a href="#" class="abs-toggle" aria-expanded="false">abstract</a></div>
+        <p class="summary">Flow-matching trajectory generation with a learned human-likeness score for selecting among trajectories.</p>
+        <div class="abstract" hidden><p>Safe and computationally efficient local planning for mobile robots in dense, unstructured human crowds remains a fundamental challenge. Moreover, ensuring that robot trajectories are similar to how a human moves will increase the acceptance of the robot in human environments. In this paper, we present Crowd-FM, a learning-based approach to address both safety and human-likeness challenges. Our approach has two novel components. First, we train a Conditional Flow-Matching (CFM) policy over a dataset of optimally controlled trajectories to learn a set of collision-free primitives that a robot can choose at any given scenario. The chosen optimal control solver can generate multi-modal collision-free trajectories, allowing the CFM policy to learn a diverse set of maneuvers. Secondly, we learn a score function over a dataset of human demonstration trajectories that provides a human-likeness score for the flow primitives. At inference time, computing the optimal trajectory requires selecting the one with the highest score.</p></div>
+      </div>
+      </li>
+
+      <li class="entry has-thumb">
+        <a class="thumb" href="https://openreview.net/forum?id=SydJVHa2wr"><img src="assets/img/decoupling.webp" alt="Candidate trajectories in a simulated crowd with tracked pedestrians" loading="lazy"></a>
+        <div class="body">
+        <div class="title"><a href="https://openreview.net/forum?id=SydJVHa2wr">Decoupling Safety and Social Compliance in Generative Crowd Navigation</a></div>
+        <div class="authors">Antareep Singha*, Laksh Nanwani*, <strong>Mathai Mathew Pulicken</strong>, Samkit Jain, Phani Teja Singamaneni, Arun Kumar Singh, K. Madhava Krishna</div>
+        <div class="venue"><em>ICRA 2026 Workshop on Bridging the Gap between Robot Learning and Human-Centered Robotics</em>, 2026</div>
+        <div class="pills"><a href="https://openreview.net/forum?id=SydJVHa2wr">OpenReview</a></div>
+        </div>
+      </li>
+
+    </ol>
+  </section>
+
+  <footer>© 2026 Mathai Mathew Pulicken</footer>
+</main>
+
+<script>
+  document.querySelectorAll(".abs-toggle").forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      e.preventDefault();
+      var box = a.closest(".body").querySelector(".abstract");
+      var open = box.hidden;
+      box.hidden = !open;
+      a.setAttribute("aria-expanded", String(open));
+    });
+  });
+</script>
+</body>
+</html>
