@@ -228,3 +228,17 @@ html[data-theme="dark"] .lost-shade { filter: drop-shadow(0 0 14px rgba(157, 185
   .ros-log::after { animation: none; }
   .sudo-toast { transition: none; }
 }
+
+/* footer quote (see quotes.js) */
+.footer-quote {
+  display: block; max-width: 46ch; margin: 0 auto 18px; padding: 0;
+  border: 0; background: none; cursor: pointer; text-align: center;
+  font: italic 500 1.02rem/1.5 var(--serif); color: var(--muted-2);
+  transition: color .2s;
+}
+.footer-quote:hover:not(:disabled) { color: var(--heading); }
+.footer-quote:disabled { cursor: default; }
+.footer-quote cite {
+  display: block; margin-top: 4px; font: 400 .8rem/1.4 var(--sans);
+  font-style: normal; letter-spacing: .03em; color: var(--muted);
+}
