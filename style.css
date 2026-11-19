@@ -131,3 +131,100 @@ h2 { font-size: 1.4rem; font-weight: 600; letter-spacing: -.005em; }
 .exp-head .date { font-variant-numeric: tabular-nums; }
 footer { color: var(--muted); }
 .exp-head + .exp-head { margin-top: 4px; }
+
+/* 404 page */
+.lost {
+  min-height: calc(100vh - 60px); padding: 32px 30px 72px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center;
+}
+.lost-shade { display: block; width: 150px; height: auto; margin-bottom: 16px; }
+.lost-code {
+  margin: 0; font-family: var(--serif); font-weight: 600; line-height: 1;
+  font-size: clamp(4rem, 2.5rem + 6vw, 7rem); letter-spacing: -.02em; color: var(--heading);
+}
+.lost-line { margin: 12px 0 0; font-family: var(--serif); font-size: 1.9rem; font-weight: 500; color: var(--muted-2); }
+.lost-back { margin-top: 28px; font-size: 1.05rem; font-weight: 500; }
+.lost-credit { margin: 40px 0 0; font-size: .8rem; color: var(--muted); }
+.lost-credit a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+@media (max-width: 640px) {
+  .lost-shade { width: 120px; }
+  .lost-line { font-size: 1.5rem; }
+}
+
+/* double-click the photo (see lidar.js) */
+.photo-wrap { position: relative; flex-shrink: 0; line-height: 0; touch-action: manipulation; -webkit-user-select: none; user-select: none; }
+.photo-wrap .photo { display: block; }
+.lidar-canvas {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  border-radius: 18px; cursor: pointer;
+}
+
+/* ---- theme toggle and the dark theme (see theme.js) ---- */
+
+.theme-toggle {
+  position: fixed; top: 10px; right: 14px; z-index: 60;
+  width: 34px; height: 34px; padding: 0;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--muted-2); background: color-mix(in srgb, var(--bg) 88%, transparent);
+  border: 1px solid var(--rule); border-radius: 50%;
+  opacity: .75; cursor: pointer;
+  transition: opacity .2s, color .2s, border-color .2s;
+}
+.theme-toggle:hover, .theme-toggle:focus-visible { opacity: 1; color: var(--link-hover); }
+html.theme-anim, html.theme-anim * {
+  transition: background-color .3s, color .3s, border-color .3s, box-shadow .3s !important;
+}
+
+/* Dark: Hallownest after dark. Deep blue-black, bone-white headings,
+   pale soul-blue links, a warm lumafly-orange on hover. */
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0d1018;
+  --text: #c9d1e3;
+  --heading: #eef1f8;
+  --muted: #7d88a6;
+  --muted-2: #a3aec8;
+  --thumb-bg: #151a28;
+  --rule: #232a3e;
+  --link: #9db9f2;
+  --link-hover: #f2a65a;
+  --pill-bg: #141a2b;
+  --pill-border: #2a3350;
+}
+html[data-theme="dark"] ::selection { background: rgba(157, 185, 242, .3); }
+html[data-theme="dark"] .photo { box-shadow: 0 6px 26px rgba(0, 0, 0, .55), 0 0 0 1px rgba(157, 185, 242, .12); }
+html[data-theme="dark"] .photo,
+html[data-theme="dark"] .thumb img { filter: brightness(.92); }
+html[data-theme="dark"] .thumb { box-shadow: none; }
+html[data-theme="dark"] .logo { background: #e6e8ee; border-color: #232a3e; }
+/* the black shade sprite would vanish on a dark page, so give it a soft glow */
+html[data-theme="dark"] .lost-shade { filter: drop-shadow(0 0 14px rgba(157, 185, 242, .45)); }
+
+/* hidden touches (see eggs.js) */
+.sr-only {
+  position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+.sudo-toast {
+  position: fixed; left: 16px; bottom: 16px; z-index: 80;
+  max-width: min(520px, calc(100vw - 32px)); padding: 12px 14px; border-radius: 8px;
+  background: #0d1018; color: #c9d1e3; border: 1px solid #2a3350;
+  font: .85rem/1.5 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, .35);
+  opacity: 0; transform: translateY(6px); pointer-events: none;
+  transition: opacity .25s, transform .25s;
+}
+.sudo-toast.on { opacity: 1; transform: translateY(0); }
+.sudo-err { color: #f2a65a; }
+.ros-log {
+  display: block; font: 400 clamp(.78rem, .62rem + .55vw, 1rem)/1.5 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  letter-spacing: 0; color: var(--muted-2); overflow-wrap: anywhere;
+}
+.ros-log::after { content: "\2588"; margin-left: 2px; color: var(--link); animation: ros-blink 1s steps(1) infinite; }
+.ros-log.ros-warn { color: var(--link-hover); }
+@keyframes ros-blink { 50% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .ros-log::after { animation: none; }
+  .sudo-toast { transition: none; }
+}

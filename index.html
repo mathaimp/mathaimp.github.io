@@ -13,14 +13,15 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="icon" href="favicon.ico" sizes="48x48 32x32 16x16">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="stylesheet" href="style.css?v=23">
+  <script>try{if(localStorage.getItem("theme")==="dark")document.documentElement.setAttribute("data-theme","dark")}catch(e){}</script>
+  <link rel="stylesheet" href="style.css?v=26">
 </head>
 <body>
 
 <main class="container">
 
   <header class="profile">
-    <img class="photo" src="assets/prof_pic.webp" alt="Photo of Mathai Mathew Pulicken" width="240" height="240">
+    <div class="photo-wrap"><img class="photo" src="assets/prof_pic.webp" alt="Photo of Mathai Mathew Pulicken" width="240" height="240"></div>
     <div class="about">
       <h1>Mathai Mathew Pulicken</h1>
       <p>
@@ -210,5 +211,8 @@
     });
   });
 </script>
+<script src="lidar.js" defer></script>
+<script src="theme.js" defer></script>
+<script src="eggs.js" defer></script>
 </body>
 </html>
